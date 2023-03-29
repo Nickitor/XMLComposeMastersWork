@@ -12,7 +12,7 @@
         android:theme="@style/Theme.XMLComposeMastersWork"
         tools:targetApi="31">
         <activity
-            android:name=".xml.XMLActivity"
+            android:name=".xml.presentation.ui.XMLActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
