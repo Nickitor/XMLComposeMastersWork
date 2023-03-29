@@ -22,7 +22,7 @@ class XMLActivity : AppCompatActivity() {
         adapter.submitList((1..10).map {
             CityUIModel(
                 id = it.toString(),
-                url = "",
+                url = "https://catherineasquithgallery.com/uploads/posts/2021-02/1613462166_9-p-fon-dlya-prezentatsii-pro-moskvu-10.jpg",
                 city = "Москва",
                 country = "Россия",
                 description = "Описание"
