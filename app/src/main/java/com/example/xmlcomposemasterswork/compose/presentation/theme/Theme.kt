@@ -1,4 +1,4 @@
-package com.example.xmlcomposemasterswork.compose.theme
+package com.example.xmlcomposemasterswork.compose.presentation.theme
 
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material.MaterialTheme

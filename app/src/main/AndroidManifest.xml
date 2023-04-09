@@ -15,7 +15,7 @@
         android:theme="@style/Theme.XMLComposeMastersWork"
         tools:targetApi="31">
         <activity
-            android:name=".xml.presentation.ui.XMLActivity"
+            android:name=".compose.presentation.ComposeActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -24,15 +24,9 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".compose.ComposeActivity"
+            android:name=".xml.presentation.ui.XMLActivity"
             android:exported="true"
-            android:label="@string/app_name"
             android:theme="@style/Theme.XMLComposeMastersWork">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
     </application>
 
