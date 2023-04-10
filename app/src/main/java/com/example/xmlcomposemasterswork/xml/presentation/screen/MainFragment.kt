@@ -5,6 +5,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.example.xmlcomposemasterswork.R
 import com.example.xmlcomposemasterswork.databinding.FragmentMainBinding
 import com.example.xmlcomposemasterswork.xml.presentation.model.ScreenCardUiModel
 import com.example.xmlcomposemasterswork.xml.presentation.view.screencard.ScreenCardAdapter
@@ -29,8 +31,10 @@ class MainFragment : Fragment() {
                 description = "Описание"
             )
         })
-        adapter.onClickListener = {
-
+        adapter.onClickListener = { screen ->
+            when (screen.id) {
+                1 -> findNavController().navigate(R.id.action_mainFragment_to_listsFragment)
+            }
         }
         binding.rvScreens.adapter = adapter
 
