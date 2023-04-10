@@ -20,7 +20,7 @@
 
         </activity>
         <activity
-            android:name=".xml.presentation.ui.XMLActivity"
+            android:name=".xml.presentation.XMLActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
