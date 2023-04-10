@@ -17,16 +17,16 @@
         <activity
             android:name=".compose.presentation.ComposeActivity"
             android:exported="true">
+
+        </activity>
+        <activity
+            android:name=".xml.presentation.ui.XMLActivity"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-        </activity>
-        <activity
-            android:name=".xml.presentation.ui.XMLActivity"
-            android:exported="true"
-            android:theme="@style/Theme.XMLComposeMastersWork">
         </activity>
     </application>
 

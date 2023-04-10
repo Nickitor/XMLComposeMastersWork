@@ -1,11 +1,14 @@
 package com.example.xmlcomposemasterswork.xml.presentation.ui
 
-import androidx.appcompat.app.AppCompatActivity
+import android.app.ActivityOptions
+import android.content.Intent
 import android.os.Bundle
-import com.example.xmlcomposemasterswork.R
+import androidx.appcompat.app.AppCompatActivity
+import com.example.xmlcomposemasterswork.compose.presentation.ComposeActivity
 import com.example.xmlcomposemasterswork.databinding.ActivityXmlactivityBinding
 import com.example.xmlcomposemasterswork.xml.presentation.model.CityUIModel
 import com.example.xmlcomposemasterswork.xml.presentation.view.citylist.CityListAdapter
+
 
 class XMLActivity : AppCompatActivity() {
 
@@ -29,5 +32,15 @@ class XMLActivity : AppCompatActivity() {
             )
         })
         binding.rv.adapter = adapter
+
+        binding.btnSwitch.setOnClickListener {
+            val intent = Intent(this, ComposeActivity::class.java)
+            startActivity(
+                intent,
+                ActivityOptions.makeSceneTransitionAnimation(this)
+                    .toBundle()
+            )
+            finish()
+        }
     }
 }
