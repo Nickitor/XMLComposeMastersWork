@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.xmlcomposemasterswork.databinding.FragmentMainBinding
-import com.example.xmlcomposemasterswork.xml.presentation.model.CityUIModel
-import com.example.xmlcomposemasterswork.xml.presentation.view.citylist.CityListAdapter
+import com.example.xmlcomposemasterswork.xml.presentation.model.ScreenCardUiModel
+import com.example.xmlcomposemasterswork.xml.presentation.view.screencard.ScreenCardAdapter
 
 class MainFragment : Fragment() {
 
@@ -21,17 +21,18 @@ class MainFragment : Fragment() {
     ): View {
         _binding = FragmentMainBinding.inflate(inflater, container, false)
 
-        val adapter = CityListAdapter()
+        val adapter = ScreenCardAdapter()
         adapter.submitList((1..10).map {
-            CityUIModel(
-                id = it.toString(),
-                url = "https://catherineasquithgallery.com/uploads/posts/2021-02/1613462166_9-p-fon-dlya-prezentatsii-pro-moskvu-10.jpg",
-                city = "Москва",
-                country = "Россия",
+            ScreenCardUiModel(
+                id = it,
+                title = "Эксперимент № $it",
                 description = "Описание"
             )
         })
-        binding.rv.adapter = adapter
+        adapter.onClickListener = {
+
+        }
+        binding.rvScreens.adapter = adapter
 
         return binding.root
     }

@@ -1,4 +1,4 @@
-package com.example.xmlcomposemasterswork.xml.presentation.view.citylist
+package com.example.xmlcomposemasterswork.xml.presentation.view.lists.list1
 
 import androidx.recyclerview.widget.DiffUtil
 import com.example.xmlcomposemasterswork.xml.presentation.model.CityUIModel

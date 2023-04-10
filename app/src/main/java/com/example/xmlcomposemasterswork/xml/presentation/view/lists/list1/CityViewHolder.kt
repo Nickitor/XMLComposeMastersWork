@@ -1,4 +1,4 @@
-package com.example.xmlcomposemasterswork.xml.presentation.view.citylist
+package com.example.xmlcomposemasterswork.xml.presentation.view.lists.list1
 
 import android.view.View
 import android.widget.ImageView

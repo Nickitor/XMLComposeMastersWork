@@ -4,18 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".xml.presentation.screen.MainFragment">
+    tools:context=".xml.presentation.screen.ListsFragment">
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rvScreens"
+        android:id="@+id/rvList1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
+        android:orientation="horizontal"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:itemCount="3"
-        tools:listitem="@layout/item_screen_card" />
+        tools:listitem="@layout/item_city_card" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
