@@ -6,6 +6,13 @@
     android:layout_height="match_parent"
     tools:context=".xml.presentation.screen.ListsFragment">
 
+    <include
+        android:id="@+id/actionBar"
+        layout="@layout/view_action_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvList1"
         android:layout_width="match_parent"
@@ -14,7 +21,7 @@
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/actionBar"
         tools:listitem="@layout/item_city_card" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import com.example.xmlcomposemasterswork.databinding.FragmentListsBinding
 import com.example.xmlcomposemasterswork.xml.presentation.model.CityUIModel
 import com.example.xmlcomposemasterswork.xml.presentation.view.lists.list1.CityListAdapter
@@ -32,6 +33,10 @@ class ListsFragment : Fragment() {
             )
         })
         binding.rvList1.adapter = adapter
+
+        binding.actionBar.back.setOnClickListener {
+            findNavController().popBackStack()
+        }
 
         return binding.root
     }
