@@ -1,6 +1,11 @@
 <resources>
     <string name="app_name">XMLComposeMastersWork</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+
     <string name="xml_main_screen_title">Эксперименты на XML</string>
+    <string name="xml_list_of_lists_screen_title">Вложенные списки</string>
+    <string name="xml_list_different_items_screen_title">Список с разными элементами</string>
+    <string name="xml_custom_view_screen_title">Вложенные Custom View</string>
+    <string name="xml_with_updates_screen_title">С обновлениями экрана</string>
+
 </resources>

@@ -11,6 +11,50 @@
         android:label="fragment_main"
         tools:layout="@layout/fragment_main">
 
+        <action
+            android:id="@+id/action_mainFragment_to_listOfListsFragment"
+            app:destination="@id/listOfListsFragment"
+            app:popUpTo="@id/listOfListsFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_mainFragment_to_listDifferentItemsFragment"
+            app:destination="@id/listDifferentItemsFragment"
+            app:popUpTo="@id/listDifferentItemsFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_mainFragment_to_customViewFragment"
+            app:destination="@id/customViewFragment"
+            app:popUpTo="@id/customViewFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_mainFragment_to_withUpdatesFragment"
+            app:destination="@id/withUpdatesFragment"
+            app:popUpTo="@id/withUpdatesFragment"
+            app:popUpToInclusive="true" />
     </fragment>
+
+    <fragment
+        android:id="@+id/customViewFragment"
+        android:name="com.example.xmlcomposemasterswork.xml.presentation.screen.CustomViewFragment"
+        android:label="fragment_custom_view"
+        tools:layout="@layout/fragment_custom_view" />
+
+    <fragment
+        android:id="@+id/listDifferentItemsFragment"
+        android:name="com.example.xmlcomposemasterswork.xml.presentation.screen.ListDifferentItemsFragment"
+        android:label="fragment_list_different_items"
+        tools:layout="@layout/fragment_list_different_items" />
+
+    <fragment
+        android:id="@+id/listOfListsFragment"
+        android:name="com.example.xmlcomposemasterswork.xml.presentation.screen.ListOfListsFragment"
+        android:label="fragment_list_of_lists"
+        tools:layout="@layout/fragment_list_of_lists" />
+
+    <fragment
+        android:id="@+id/withUpdatesFragment"
+        android:name="com.example.xmlcomposemasterswork.xml.presentation.screen.WithUpdatesFragment"
+        android:label="fragment_with_updates"
+        tools:layout="@layout/fragment_with_updates" />
 
 </navigation>
