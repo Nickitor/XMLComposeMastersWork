@@ -6,7 +6,7 @@ import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.example.xmlcomposemasterswork.compose.presentation.ComposeActivity
 import com.example.xmlcomposemasterswork.databinding.ActivityXmlactivityBinding
-import com.example.xmlcomposemasterswork.presentation.ActivityFrameRateTracer
+import com.example.xmlcomposemasterswork.util.ActivityFrameRateTracer
 
 class XMLActivity : AppCompatActivity() {
 

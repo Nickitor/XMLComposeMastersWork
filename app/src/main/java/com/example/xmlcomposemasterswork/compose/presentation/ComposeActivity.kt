@@ -13,7 +13,7 @@ import androidx.compose.ui.platform.LocalContext
 import com.example.xmlcomposemasterswork.compose.presentation.screen.MainScreen
 import com.example.xmlcomposemasterswork.compose.presentation.theme.XMLComposeMastersWorkTheme
 import com.example.xmlcomposemasterswork.compose.presentation.viewmodel.ComposeViewModel
-import com.example.xmlcomposemasterswork.presentation.ActivityFrameRateTracer
+import com.example.xmlcomposemasterswork.util.ActivityFrameRateTracer
 import com.example.xmlcomposemasterswork.xml.presentation.XMLActivity
 
 

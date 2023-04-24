@@ -1,4 +1,4 @@
-package com.example.xmlcomposemasterswork.presentation
+package com.example.xmlcomposemasterswork.util
 
 data class FrameRate(
     var totalFrames: Long = 0L,
