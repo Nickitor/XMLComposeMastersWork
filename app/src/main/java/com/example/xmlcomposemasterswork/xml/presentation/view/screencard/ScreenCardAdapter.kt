@@ -4,7 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import com.example.xmlcomposemasterswork.R.layout
-import com.example.xmlcomposemasterswork.xml.domain.model.ScreenCardModel
+import com.example.xmlcomposemasterswork.domain.model.ScreenCardModel
 
 class ScreenCardAdapter :
     ListAdapter<ScreenCardModel, ScreenCardViewHolder>(ScreenCardDiffCallback()) {

@@ -7,12 +7,13 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.xmlcomposemasterswork.R
+import com.example.xmlcomposemasterswork.data.source.ExperimentSource
 import com.example.xmlcomposemasterswork.databinding.FragmentMainBinding
-import com.example.xmlcomposemasterswork.xml.data.source.ExperimentSource
-import com.example.xmlcomposemasterswork.xml.domain.model.ScreenLabel.CustomViewScreen
-import com.example.xmlcomposemasterswork.xml.domain.model.ScreenLabel.ListOfDifferentItemsScreen
-import com.example.xmlcomposemasterswork.xml.domain.model.ScreenLabel.ListOfListsScreen
-import com.example.xmlcomposemasterswork.xml.domain.model.ScreenLabel.WithUpdatesScreen
+import com.example.xmlcomposemasterswork.domain.model.Screen.CustomViewScreen
+import com.example.xmlcomposemasterswork.domain.model.Screen.ListOfDifferentItemsScreen
+import com.example.xmlcomposemasterswork.domain.model.Screen.ListOfListsScreen
+import com.example.xmlcomposemasterswork.domain.model.Screen.MainScreen
+import com.example.xmlcomposemasterswork.domain.model.Screen.WithUpdatesScreen
 import com.example.xmlcomposemasterswork.xml.presentation.view.screencard.ScreenCardAdapter
 
 class MainFragment : Fragment() {
@@ -49,6 +50,7 @@ class MainFragment : Fragment() {
         adapter.onClickListener = { screen ->
             findNavController().navigate(
                 when (screen.screenType) {
+                    MainScreen -> R.id.action_mainFragment_self
                     ListOfListsScreen -> R.id.action_mainFragment_to_listOfListsFragment
                     ListOfDifferentItemsScreen -> R.id.action_mainFragment_to_listDifferentItemsFragment
                     CustomViewScreen -> R.id.action_mainFragment_to_customViewFragment

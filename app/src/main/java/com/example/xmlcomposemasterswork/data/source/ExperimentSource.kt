@@ -1,10 +1,10 @@
-package com.example.xmlcomposemasterswork.xml.data.source
+package com.example.xmlcomposemasterswork.data.source
 
-import com.example.xmlcomposemasterswork.xml.domain.model.ScreenCardModel
-import com.example.xmlcomposemasterswork.xml.domain.model.ScreenLabel.CustomViewScreen
-import com.example.xmlcomposemasterswork.xml.domain.model.ScreenLabel.ListOfDifferentItemsScreen
-import com.example.xmlcomposemasterswork.xml.domain.model.ScreenLabel.ListOfListsScreen
-import com.example.xmlcomposemasterswork.xml.domain.model.ScreenLabel.WithUpdatesScreen
+import com.example.xmlcomposemasterswork.domain.model.Screen.CustomViewScreen
+import com.example.xmlcomposemasterswork.domain.model.Screen.ListOfDifferentItemsScreen
+import com.example.xmlcomposemasterswork.domain.model.Screen.ListOfListsScreen
+import com.example.xmlcomposemasterswork.domain.model.Screen.WithUpdatesScreen
+import com.example.xmlcomposemasterswork.domain.model.ScreenCardModel
 
 class ExperimentSource {
 

@@ -7,5 +7,6 @@
     <string name="xml_list_different_items_screen_title">Список с разными элементами</string>
     <string name="xml_custom_view_screen_title">Вложенные Custom View</string>
     <string name="xml_with_updates_screen_title">С обновлениями экрана</string>
+    <string name="compose_main_screen_title">Эксперименты на Compose</string>
 
 </resources>

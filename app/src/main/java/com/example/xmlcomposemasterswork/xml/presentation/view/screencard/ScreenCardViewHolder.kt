@@ -4,7 +4,7 @@ import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.xmlcomposemasterswork.R
-import com.example.xmlcomposemasterswork.xml.domain.model.ScreenCardModel
+import com.example.xmlcomposemasterswork.domain.model.ScreenCardModel
 
 class ScreenCardViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private var title: TextView = view.findViewById(R.id.tvTitle)

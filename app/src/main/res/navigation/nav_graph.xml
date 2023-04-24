@@ -31,6 +31,11 @@
             app:destination="@id/withUpdatesFragment"
             app:popUpTo="@id/withUpdatesFragment"
             app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_mainFragment_self"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/mainFragment"
+            app:popUpToInclusive="true" />
     </fragment>
 
     <fragment
