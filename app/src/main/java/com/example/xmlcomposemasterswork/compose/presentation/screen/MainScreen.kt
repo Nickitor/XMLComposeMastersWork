@@ -15,8 +15,7 @@ import com.example.xmlcomposemasterswork.compose.presentation.viewmodel.ComposeV
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 fun MainScreen(
-    viewModel: ComposeViewModel,
-    switchToXMLClickListener: (() -> Unit)?
+    viewModel: ComposeViewModel, switchToXMLClickListener: (() -> Unit)?
 ) {
     val navHostController = rememberNavController()
 
@@ -25,14 +24,47 @@ fun MainScreen(
     ) {
         AppNavGraph(
             navHostController = navHostController,
-            mainScreenContent = { HomeScreen() },
-            listOfListsScreenContent = { ListOfListsScreen() }
+            mainScreenContent = {
+                HomeScreen(listItemClicked = {
+                    navHostController.navigate("${it.screenType.route}/${it.description}")
+                })
+            },
+            listOfListsScreenContent = {
+                ListOfListsScreen(
+                    title = it.orEmpty(),
+                    backClicked = {
+                        navHostController.popBackStack()
+                    }
+                )
+            },
+            listOfDifferentItemsContent = {
+                ListOfDifferentItemsScreen(
+                    title = it.orEmpty(),
+                    backClicked = {
+                        navHostController.popBackStack()
+                    }
+                )
+            },
+            customViewContent = {
+                CustomViewScreen(
+                    title = it.orEmpty(),
+                    backClicked = {
+                        navHostController.popBackStack()
+                    }
+                )
+            },
+            withUpdatesContent = {
+                WithUpdatesScreen(
+                    title = it.orEmpty(),
+                    backClicked = {
+                        navHostController.popBackStack()
+                    }
+                )
+            },
         )
 
-        Switch(checked = true,
-            modifier = Modifier.padding(bottom = 100.dp),
-            onCheckedChange = {
-                switchToXMLClickListener?.invoke()
-            })
+        Switch(checked = true, modifier = Modifier.padding(bottom = 100.dp), onCheckedChange = {
+            switchToXMLClickListener?.invoke()
+        })
     }
 }

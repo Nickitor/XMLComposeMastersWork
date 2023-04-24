@@ -10,7 +10,7 @@ import com.example.xmlcomposemasterswork.compose.presentation.view.ActionBar
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
-fun ListOfListsScreen(
+fun CustomViewScreen(
     title: String = "",
     backClicked: (() -> Unit)? = null
 ) {
@@ -25,6 +25,6 @@ fun ListOfListsScreen(
             )
         }
     ) {
-        Text(text = "ListOfListsScreen")
+        Text(text = "CustomViewScreen")
     }
 }

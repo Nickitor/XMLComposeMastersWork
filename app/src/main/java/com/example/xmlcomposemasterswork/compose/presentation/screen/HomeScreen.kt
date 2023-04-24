@@ -15,9 +15,12 @@ import androidx.compose.ui.unit.sp
 import com.example.xmlcomposemasterswork.R.string
 import com.example.xmlcomposemasterswork.compose.presentation.view.ItemScreenCard
 import com.example.xmlcomposemasterswork.data.source.ExperimentSource
+import com.example.xmlcomposemasterswork.domain.model.ScreenCardModel
 
 @Composable
-fun HomeScreen() {
+fun HomeScreen(
+    listItemClicked: ((ScreenCardModel) -> Unit)? = null
+) {
 
     val experimentList = ExperimentSource().getExperiments()
 
@@ -34,7 +37,12 @@ fun HomeScreen() {
             )
         }
         items(experimentList) { listItem ->
-            ItemScreenCard(listItem)
+            ItemScreenCard(
+                listItem,
+                clickListener = {
+                    listItemClicked?.invoke(listItem)
+                }
+            )
         }
     }
 }
