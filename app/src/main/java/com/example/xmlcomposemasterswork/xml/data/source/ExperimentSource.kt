@@ -1,15 +1,14 @@
 package com.example.xmlcomposemasterswork.xml.data.source
 
-import com.example.xmlcomposemasterswork.xml.data.dto.ExperimentDto
+import com.example.xmlcomposemasterswork.xml.domain.model.ScreenCardModel
 
 class ExperimentSource {
 
     private val experimentList = listOf(
-        ExperimentDto(
+        ScreenCardModel(
             id = 1,
-            title = "Вложенные списки",
-            description = "Эксперимент с большой вложенностью списков. " +
-                    "Список верхнего уровня содержит в себе список с ещё одним списком внутри."
+            title = "01",
+            description = "Вложенные списки"
         )
     )
 

@@ -10,17 +10,7 @@
         android:name="com.example.xmlcomposemasterswork.xml.presentation.screen.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main">
-        <action
-            android:id="@+id/action_mainFragment_to_listsFragment"
-            app:destination="@id/listsFragment"
-            app:popUpTo="@id/listsFragment"
-            app:popUpToInclusive="true" />
-    </fragment>
 
-    <fragment
-        android:id="@+id/listsFragment"
-        android:name="com.example.xmlcomposemasterswork.xml.presentation.screen.ListsFragment"
-        android:label="fragment_lists"
-        tools:layout="@layout/fragment_lists" />
+    </fragment>
 
 </navigation>

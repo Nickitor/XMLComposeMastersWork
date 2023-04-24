@@ -1,16 +1,16 @@
 package com.example.xmlcomposemasterswork.xml.presentation.view.screencard
 
 import androidx.recyclerview.widget.DiffUtil
-import com.example.xmlcomposemasterswork.xml.presentation.model.ScreenCardUiModel
+import com.example.xmlcomposemasterswork.xml.domain.model.ScreenCardModel
 
-class ScreenCardDiffCallback : DiffUtil.ItemCallback<ScreenCardUiModel>() {
-    override fun areItemsTheSame(oldItem: ScreenCardUiModel, newItem: ScreenCardUiModel): Boolean {
+class ScreenCardDiffCallback : DiffUtil.ItemCallback<ScreenCardModel>() {
+    override fun areItemsTheSame(oldItem: ScreenCardModel, newItem: ScreenCardModel): Boolean {
         return oldItem.title == newItem.title
     }
 
     override fun areContentsTheSame(
-        oldItem: ScreenCardUiModel,
-        newItem: ScreenCardUiModel
+        oldItem: ScreenCardModel,
+        newItem: ScreenCardModel
     ): Boolean {
         return oldItem == newItem
     }

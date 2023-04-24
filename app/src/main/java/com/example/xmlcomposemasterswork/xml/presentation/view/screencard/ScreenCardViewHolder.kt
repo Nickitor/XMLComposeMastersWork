@@ -4,13 +4,13 @@ import android.view.View
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.xmlcomposemasterswork.R
-import com.example.xmlcomposemasterswork.xml.presentation.model.ScreenCardUiModel
+import com.example.xmlcomposemasterswork.xml.domain.model.ScreenCardModel
 
 class ScreenCardViewHolder(view: View) : RecyclerView.ViewHolder(view) {
     private var title: TextView = view.findViewById(R.id.tvTitle)
     private var description: TextView = view.findViewById(R.id.tvDescription)
 
-    fun bind(data: ScreenCardUiModel) {
+    fun bind(data: ScreenCardModel) {
         title.text = data.title
         description.text = data.description
     }

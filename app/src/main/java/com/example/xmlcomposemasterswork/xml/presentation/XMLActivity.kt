@@ -8,7 +8,6 @@ import com.example.xmlcomposemasterswork.compose.presentation.ComposeActivity
 import com.example.xmlcomposemasterswork.databinding.ActivityXmlactivityBinding
 import com.example.xmlcomposemasterswork.presentation.ActivityFrameRateTracer
 
-
 class XMLActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityXmlactivityBinding
@@ -22,14 +21,18 @@ class XMLActivity : AppCompatActivity() {
 
         binding = ActivityXmlactivityBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.btnSwitch.setOnClickListener {
-            val intent = Intent(this, ComposeActivity::class.java)
-            startActivity(
-                intent,
-                ActivityOptions.makeSceneTransitionAnimation(this)
-                    .toBundle()
-            )
-            finish()
+        binding.fabSwitchActivity.fab.setOnClickListener {
+            navigateToCompose()
         }
+    }
+
+    private fun navigateToCompose() {
+        val intent = Intent(this, ComposeActivity::class.java)
+        startActivity(
+            intent,
+            ActivityOptions.makeSceneTransitionAnimation(this)
+                .toBundle()
+        )
+        finish()
     }
 }

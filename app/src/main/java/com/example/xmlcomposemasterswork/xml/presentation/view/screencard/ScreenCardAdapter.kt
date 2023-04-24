@@ -4,12 +4,12 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.ListAdapter
 import com.example.xmlcomposemasterswork.R.layout
-import com.example.xmlcomposemasterswork.xml.presentation.model.ScreenCardUiModel
+import com.example.xmlcomposemasterswork.xml.domain.model.ScreenCardModel
 
 class ScreenCardAdapter :
-    ListAdapter<ScreenCardUiModel, ScreenCardViewHolder>(ScreenCardDiffCallback()) {
+    ListAdapter<ScreenCardModel, ScreenCardViewHolder>(ScreenCardDiffCallback()) {
 
-    var onClickListener: ((ScreenCardUiModel) -> Unit)? = null
+    var onClickListener: ((ScreenCardModel) -> Unit)? = null
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ScreenCardViewHolder {
         return ScreenCardViewHolder(
