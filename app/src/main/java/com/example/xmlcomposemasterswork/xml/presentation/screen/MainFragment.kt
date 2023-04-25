@@ -14,7 +14,7 @@ import com.example.xmlcomposemasterswork.domain.model.Screen.ListOfDifferentItem
 import com.example.xmlcomposemasterswork.domain.model.Screen.ListOfListsScreen
 import com.example.xmlcomposemasterswork.domain.model.Screen.MainScreen
 import com.example.xmlcomposemasterswork.domain.model.Screen.WithUpdatesScreen
-import com.example.xmlcomposemasterswork.xml.presentation.view.screencard.ScreenCardAdapter
+import com.example.xmlcomposemasterswork.xml.presentation.adapter.screencard.ScreenCardAdapter
 
 class MainFragment : Fragment() {
 

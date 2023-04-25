@@ -9,7 +9,7 @@ import androidx.navigation.fragment.findNavController
 import com.example.xmlcomposemasterswork.R.string
 import com.example.xmlcomposemasterswork.data.source.ListOfListsSource
 import com.example.xmlcomposemasterswork.databinding.FragmentListOfListsBinding
-import com.example.xmlcomposemasterswork.xml.presentation.view.listoflists.ListOfListsAdapter
+import com.example.xmlcomposemasterswork.xml.presentation.adapter.listoflists.ListOfListsAdapter
 
 class ListOfListsFragment : Fragment() {
 

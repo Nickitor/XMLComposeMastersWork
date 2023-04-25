@@ -1,4 +1,4 @@
-package com.example.xmlcomposemasterswork.xml.presentation.view.screencard
+package com.example.xmlcomposemasterswork.xml.presentation.adapter.screencard
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

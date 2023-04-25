@@ -1,4 +1,4 @@
-package com.example.xmlcomposemasterswork.xml.presentation.view.listoflists
+package com.example.xmlcomposemasterswork.xml.presentation.adapter.listoflists
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

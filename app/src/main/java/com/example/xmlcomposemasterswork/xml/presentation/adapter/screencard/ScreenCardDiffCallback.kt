@@ -1,4 +1,4 @@
-package com.example.xmlcomposemasterswork.xml.presentation.view.screencard
+package com.example.xmlcomposemasterswork.xml.presentation.adapter.screencard
 
 import androidx.recyclerview.widget.DiffUtil
 import com.example.xmlcomposemasterswork.domain.model.ScreenCardModel
