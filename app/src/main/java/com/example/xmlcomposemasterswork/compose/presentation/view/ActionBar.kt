@@ -3,6 +3,7 @@ package com.example.xmlcomposemasterswork.compose.presentation.view
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.material.TopAppBar
@@ -26,14 +27,18 @@ fun ActionBar(
         elevation = 10.dp
     ) {
         Icon(
+            tint = Color.Black,
             painter = painterResource(id = drawable.ic_back),
             contentDescription = "back",
             modifier = Modifier
                 .clickable {
                     clickListener?.invoke()
                 }
+                .size(30.dp)
+                .padding(start = 10.dp)
         )
         Text(
+            color = Color.Black,
             text = title,
             fontSize = 20.sp,
             modifier = Modifier
