@@ -24,7 +24,7 @@ fun ItemScreenCard(
 ) {
     Card(
         shape = RoundedCornerShape(10.dp),
-        elevation = 10.dp,
+        elevation = 2.dp,
         modifier = Modifier
             .fillMaxWidth()
             .graphicsLayer(translationX = -70f)
