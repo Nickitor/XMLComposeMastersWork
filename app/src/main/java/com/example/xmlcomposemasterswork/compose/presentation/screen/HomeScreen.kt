@@ -22,7 +22,7 @@ fun HomeScreen(
     listItemClicked: ((ScreenCardModel) -> Unit)? = null
 ) {
 
-    val experimentList = ExperimentSource().getExperiments()
+    val experimentList = ExperimentSource.getExperiments()
 
     LazyColumn {
         item {

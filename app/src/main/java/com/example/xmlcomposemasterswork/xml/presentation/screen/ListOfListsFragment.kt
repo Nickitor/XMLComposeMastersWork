@@ -7,12 +7,16 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.xmlcomposemasterswork.R.string
+import com.example.xmlcomposemasterswork.data.source.ListOfListsSource
 import com.example.xmlcomposemasterswork.databinding.FragmentListOfListsBinding
+import com.example.xmlcomposemasterswork.xml.presentation.view.listoflists.ListOfListsAdapter
 
 class ListOfListsFragment : Fragment() {
 
     private var _binding: FragmentListOfListsBinding? = null
     private val binding get() = _binding!!
+
+    private val adapter: ListOfListsAdapter = ListOfListsAdapter()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -21,6 +25,7 @@ class ListOfListsFragment : Fragment() {
     ): View {
         _binding = FragmentListOfListsBinding.inflate(inflater, container, false)
 
+        setupAdapter()
         setupNavigation()
 
         return binding.root
@@ -29,6 +34,11 @@ class ListOfListsFragment : Fragment() {
     override fun onDestroyView() {
         _binding = null
         super.onDestroyView()
+    }
+
+    private fun setupAdapter() {
+        adapter.dataSet = ListOfListsSource.getList()
+        binding.rvListOfLists.adapter = adapter
     }
 
     private fun setupNavigation() {

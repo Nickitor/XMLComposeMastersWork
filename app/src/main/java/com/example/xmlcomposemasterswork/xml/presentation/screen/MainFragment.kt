@@ -23,8 +23,6 @@ class MainFragment : Fragment() {
 
     private val adapter: ScreenCardAdapter = ScreenCardAdapter()
 
-    private val experimentSource = ExperimentSource()
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View {
@@ -42,7 +40,7 @@ class MainFragment : Fragment() {
     }
 
     private fun setupAdapter() {
-        adapter.submitList(experimentSource.getExperiments())
+        adapter.submitList(ExperimentSource.getExperiments())
         binding.rvScreens.adapter = adapter
     }
 

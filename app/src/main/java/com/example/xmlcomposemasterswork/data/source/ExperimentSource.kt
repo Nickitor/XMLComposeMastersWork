@@ -6,7 +6,7 @@ import com.example.xmlcomposemasterswork.domain.model.Screen.ListOfListsScreen
 import com.example.xmlcomposemasterswork.domain.model.Screen.WithUpdatesScreen
 import com.example.xmlcomposemasterswork.domain.model.ScreenCardModel
 
-class ExperimentSource {
+object ExperimentSource {
 
     private val experimentList = listOf(
         ScreenCardModel(
