@@ -27,7 +27,7 @@ fun ItemScreenCard(
         elevation = 10.dp,
         modifier = Modifier
             .fillMaxWidth()
-            .graphicsLayer(translationX = -20f)
+            .graphicsLayer(translationX = -70f)
             .padding(vertical = 10.dp)
             .clickable { clickListener() }
     ) {

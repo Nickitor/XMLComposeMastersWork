@@ -5,6 +5,9 @@
     android:id="@+id/fab"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:backgroundTint="@color/white"
+    android:src="@drawable/ic_compose"
+    app:borderWidth="0dp"
     app:layout_constraintBottom_toBottomOf="parent"
     app:layout_constraintEnd_toEndOf="parent"
     tools:ignore="ContentDescription">
