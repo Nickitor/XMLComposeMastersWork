@@ -1,6 +1,5 @@
 package com.example.xmlcomposemasterswork.xml.presentation
 
-import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
@@ -29,9 +28,7 @@ class XMLActivity : AppCompatActivity() {
     private fun navigateToCompose() {
         val intent = Intent(this, ComposeActivity::class.java)
         startActivity(
-            intent,
-            ActivityOptions.makeSceneTransitionAnimation(this)
-                .toBundle()
+            intent
         )
         finish()
     }

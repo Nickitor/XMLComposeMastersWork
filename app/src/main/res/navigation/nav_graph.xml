@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/mainFragment"
-        android:name="com.example.xmlcomposemasterswork.xml.presentation.screen.MainFragment"
+        android:name="com.example.xmlcomposemasterswork.xml.presentation.screen.main.MainFragment"
         android:label="fragment_main"
         tools:layout="@layout/fragment_main">
 
@@ -40,25 +40,25 @@
 
     <fragment
         android:id="@+id/customViewFragment"
-        android:name="com.example.xmlcomposemasterswork.xml.presentation.screen.CustomViewFragment"
+        android:name="com.example.xmlcomposemasterswork.xml.presentation.screen.customview.CustomViewFragment"
         android:label="fragment_custom_view"
         tools:layout="@layout/fragment_custom_view" />
 
     <fragment
         android:id="@+id/listDifferentItemsFragment"
-        android:name="com.example.xmlcomposemasterswork.xml.presentation.screen.ListDifferentItemsFragment"
+        android:name="com.example.xmlcomposemasterswork.xml.presentation.screen.listdifferentitems.ListDifferentItemsFragment"
         android:label="fragment_list_different_items"
         tools:layout="@layout/fragment_list_different_items" />
 
     <fragment
         android:id="@+id/listOfListsFragment"
-        android:name="com.example.xmlcomposemasterswork.xml.presentation.screen.ListOfListsFragment"
+        android:name="com.example.xmlcomposemasterswork.xml.presentation.screen.listoflists.ListOfListsFragment"
         android:label="fragment_list_of_lists"
         tools:layout="@layout/fragment_list_of_lists" />
 
     <fragment
         android:id="@+id/withUpdatesFragment"
-        android:name="com.example.xmlcomposemasterswork.xml.presentation.screen.WithUpdatesFragment"
+        android:name="com.example.xmlcomposemasterswork.xml.presentation.screen.withupdates.WithUpdatesFragment"
         android:label="fragment_with_updates"
         tools:layout="@layout/fragment_with_updates" />
 

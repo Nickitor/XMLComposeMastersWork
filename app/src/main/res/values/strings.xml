@@ -9,4 +9,19 @@
     <string name="xml_with_updates_screen_title">С обновлениями экрана</string>
     <string name="compose_main_screen_title">Эксперименты на Compose</string>
 
+    <string name="partial_order_timer">В этом заказе есть товары, которых нет в наличии. Выберите, пожалуйста, замены.</string>
+    <string name="order_you_rating">Ваша оценка</string>
+    <string name="specific_order_number">Заказ №</string>
+    <string name="specific_order_receiver">Получатель</string>
+    <string name="gift_card_sender">Отправитель</string>
+    <string name="gift_card_message_text">Текст сообщения</string>
+    <string name="method_obtain_header">Способ получения</string>
+    <string name="specific_order_date_and_time">Дата и время получения</string>
+    <string name="title_order_status">Статус заказа</string>
+    <string name="specific_order_payment_type">Способ оплаты</string>
+    <string name="specific_order_payment_amount">Всего к оплате</string>
+    <string name="specific_order_list">Состав заказа</string>
+    <string name="rouble">₽</string>
+
+
 </resources>

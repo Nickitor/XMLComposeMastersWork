@@ -1,4 +1,4 @@
-package com.example.xmlcomposemasterswork.xml.presentation.screen
+package com.example.xmlcomposemasterswork.xml.presentation.screen.withupdates
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.xmlcomposemasterswork.R.string
-import com.example.xmlcomposemasterswork.databinding.FragmentListDifferentItemsBinding
+import com.example.xmlcomposemasterswork.databinding.FragmentWithUpdatesBinding
 
-class ListDifferentItemsFragment : Fragment() {
+class WithUpdatesFragment : Fragment() {
 
-    private var _binding: FragmentListDifferentItemsBinding? = null
+    private var _binding: FragmentWithUpdatesBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -19,7 +19,7 @@ class ListDifferentItemsFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentListDifferentItemsBinding.inflate(inflater, container, false)
+        _binding = FragmentWithUpdatesBinding.inflate(inflater, container, false)
 
         setupNavigation()
 
@@ -36,7 +36,7 @@ class ListDifferentItemsFragment : Fragment() {
             ivBack.setOnClickListener {
                 findNavController().popBackStack()
             }
-            tvTitle.text = getString(string.xml_list_different_items_screen_title)
+            tvTitle.text = getString(string.xml_with_updates_screen_title)
         }
         binding.actionBar.ivBack.setOnClickListener {
             findNavController().popBackStack()
