@@ -1,5 +1,6 @@
 package com.example.xmlcomposemasterswork.compose.presentation.view
 
+import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -10,6 +11,11 @@ import androidx.compose.material.Card
 import androidx.compose.material.Icon
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.rememberCoroutineScope
+import androidx.compose.runtime.saveable.rememberSaveable
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
@@ -20,12 +26,26 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.xmlcomposemasterswork.R
 import com.example.xmlcomposemasterswork.R.drawable
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
+@SuppressLint("CoroutineCreationDuringComposition")
 @Preview
 @Composable
 fun TimerView(
     modifier: Modifier = Modifier
 ) {
+    var timer by rememberSaveable { mutableStateOf(0) }
+    val scope = rememberCoroutineScope()
+    val TIMER_PERIOD = 1000L
+
+    scope.launch {
+        while (true) {
+            delay(TIMER_PERIOD)
+            timer += 1
+        }
+    }
+
     Card(
         shape = RoundedCornerShape(12.dp),
         elevation = 0.dp,
@@ -46,7 +66,7 @@ fun TimerView(
 
             Column() {
                 Text(
-                    text = "1 c",
+                    text = "$timer с",
                     fontSize = 14.sp,
                     color = Color.Black,
                     modifier = Modifier
