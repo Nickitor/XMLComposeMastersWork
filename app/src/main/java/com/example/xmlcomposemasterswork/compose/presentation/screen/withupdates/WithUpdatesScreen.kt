@@ -1,4 +1,4 @@
-package com.example.xmlcomposemasterswork.compose.presentation.screen
+package com.example.xmlcomposemasterswork.compose.presentation.screen.withupdates
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Column
@@ -6,26 +6,33 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material.Scaffold
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.xmlcomposemasterswork.R
 import com.example.xmlcomposemasterswork.compose.presentation.view.ActionBar
+import com.example.xmlcomposemasterswork.compose.presentation.view.OrderProductView
 import com.example.xmlcomposemasterswork.compose.presentation.view.TimerView
+import com.example.xmlcomposemasterswork.xml.presentation.screen.withupdates.WithUpdatesViewModel
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
-@Preview
 @Composable
 fun WithUpdatesScreen(
-    title: String = "", backClicked: (() -> Unit)? = null
+    withUpdatesViewModel: WithUpdatesViewModel,
+    title: String = "",
+    backClicked: (() -> Unit)? = null
 ) {
+    val state = withUpdatesViewModel.state.observeAsState()
+    withUpdatesViewModel.startTimer()
+
     Scaffold(modifier = Modifier.fillMaxSize(), topBar = {
         ActionBar(title = title, clickListener = {
             backClicked?.invoke()
@@ -40,13 +47,15 @@ fun WithUpdatesScreen(
             TimerView(
                 modifier = Modifier.padding(
                     top = 8.dp,
-                )
+                ),
+                timer = state.value?.timer ?: 0
             )
 
             LazyColumn(
-                modifier = Modifier.padding(
-                    top = 10.dp
-                )
+                modifier = Modifier
+                    .padding(
+                        top = 10.dp
+                    )
             ) {
                 item {
                     Row() {
@@ -182,7 +191,14 @@ fun WithUpdatesScreen(
                             top = 24.dp
                         )
                     )
+                }
 
+                val list = state.value?.order ?: listOf()
+                items(list) {
+                    OrderProductView(product = it)
+                }
+
+                item {
                     Row(
                         modifier = Modifier
                             .padding(

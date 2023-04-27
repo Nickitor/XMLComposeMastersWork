@@ -15,6 +15,7 @@ import com.example.xmlcomposemasterswork.compose.presentation.theme.XMLComposeMa
 import com.example.xmlcomposemasterswork.compose.presentation.viewmodel.ComposeViewModel
 import com.example.xmlcomposemasterswork.util.ActivityFrameRateTracer
 import com.example.xmlcomposemasterswork.xml.presentation.XMLActivity
+import com.example.xmlcomposemasterswork.xml.presentation.screen.withupdates.WithUpdatesViewModel
 
 
 class ComposeActivity : ComponentActivity() {
@@ -22,6 +23,8 @@ class ComposeActivity : ComponentActivity() {
     private val viewModel by viewModels<ComposeViewModel>()
 
     private val frameRateTracer = ActivityFrameRateTracer(this, "Compose")
+
+    private val withUpdatesViewModel by viewModels<WithUpdatesViewModel>()
 
     @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -39,7 +42,7 @@ class ComposeActivity : ComponentActivity() {
                 }
 
                 MainScreen(
-                    viewModel = viewModel,
+                    withUpdatesViewModel = withUpdatesViewModel,
                     switchToXMLClickListener = {
                         viewModel.switchToXMLButtonClicked()
                     }

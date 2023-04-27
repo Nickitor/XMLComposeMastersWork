@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.xmlcomposemasterswork.R.string
-import com.example.xmlcomposemasterswork.data.source.WithUpdatesSource
 import com.example.xmlcomposemasterswork.databinding.FragmentWithUpdatesBinding
 import com.example.xmlcomposemasterswork.xml.presentation.screen.withupdates.adapter.WithUpdatesAdapter
 
@@ -62,7 +61,7 @@ class WithUpdatesFragment : Fragment() {
     private fun setStateObserver() {
         viewModel.state.observe(viewLifecycleOwner) {
             with(binding) {
-                adapter.dataSet = WithUpdatesSource.getList()
+                adapter.dataSet = it.order
                 orderTimer.tvTimeLeft.text = it.timerText
                 tvOrderId.text = it.orderId
                 tvReceiver.text = it.receiverName

@@ -15,12 +15,14 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.rememberNavController
 import com.example.xmlcomposemasterswork.R
 import com.example.xmlcomposemasterswork.compose.navigation.AppNavGraph
-import com.example.xmlcomposemasterswork.compose.presentation.viewmodel.ComposeViewModel
+import com.example.xmlcomposemasterswork.compose.presentation.screen.withupdates.WithUpdatesScreen
+import com.example.xmlcomposemasterswork.xml.presentation.screen.withupdates.WithUpdatesViewModel
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Composable
 fun MainScreen(
-    viewModel: ComposeViewModel, switchToXMLClickListener: (() -> Unit)?
+    withUpdatesViewModel: WithUpdatesViewModel,
+    switchToXMLClickListener: (() -> Unit)?
 ) {
     val navHostController = rememberNavController()
 
@@ -74,6 +76,7 @@ fun MainScreen(
             },
             withUpdatesContent = {
                 WithUpdatesScreen(
+                    withUpdatesViewModel = withUpdatesViewModel,
                     title = it.orEmpty(),
                     backClicked = {
                         navHostController.popBackStack()
