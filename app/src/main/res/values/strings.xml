@@ -4,7 +4,7 @@
 
     <string name="xml_main_screen_title">Эксперименты на XML</string>
     <string name="xml_list_of_lists_screen_title">Вложенные списки</string>
-    <string name="xml_list_different_items_screen_title">Список с разными элементами</string>
+    <string name="xml_list_different_items_screen_title">Разные списки</string>
     <string name="xml_custom_view_screen_title">Вложенные Custom View</string>
     <string name="xml_with_updates_screen_title">С обновлениями экрана</string>
     <string name="compose_main_screen_title">Эксперименты на Compose</string>
@@ -22,6 +22,11 @@
     <string name="specific_order_payment_amount">Всего к оплате</string>
     <string name="specific_order_list">Состав заказа</string>
     <string name="rouble">₽</string>
+    <string name="stories">Истории</string>
+    <string name="banners">Акции</string>
+    <string name="menu">Меню</string>
+    <string name="subscriptions">Абонементы и подписки</string>
+    <string name="novelties">Новики</string>
 
 
 </resources>

@@ -17,7 +17,7 @@ object ExperimentSource {
         ScreenCardModel(
             screenType = ListOfDifferentItemsScreen,
             title = "02",
-            description = "Список с разными элементами"
+            description = "Разные списки"
         ),
         ScreenCardModel(
             screenType = CustomViewScreen,
