@@ -69,7 +69,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/rvListOfCircles"
                 tools:itemCount="3"
-                tools:listitem="@layout/item_banners" />
+                tools:listitem="@layout/item_banner" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -113,7 +113,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/rvListOfCircles"
                 tools:itemCount="3"
-                tools:listitem="@layout/item_subscriptions" />
+                tools:listitem="@layout/item_subscription" />
 
             <TextView
                 android:layout_width="match_parent"
@@ -135,7 +135,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/rvListOfCircles"
                 tools:itemCount="3"
-                tools:listitem="@layout/item_novelties" />
+                tools:listitem="@layout/item_novelty" />
 
         </LinearLayout>
 

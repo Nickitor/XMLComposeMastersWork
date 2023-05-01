@@ -17,7 +17,7 @@ class BannerAdapter : RecyclerView.Adapter<BannerViewHolder>() {
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): BannerViewHolder {
         return BannerViewHolder(
             LayoutInflater.from(viewGroup.context)
-                .inflate(layout.item_banners, viewGroup, false)
+                .inflate(layout.item_banner, viewGroup, false)
         )
     }
 

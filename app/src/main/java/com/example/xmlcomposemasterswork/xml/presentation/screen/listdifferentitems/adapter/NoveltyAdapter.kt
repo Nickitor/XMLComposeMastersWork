@@ -17,7 +17,7 @@ class NoveltyAdapter : RecyclerView.Adapter<NoveltyViewHolder>() {
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): NoveltyViewHolder {
         return NoveltyViewHolder(
             LayoutInflater.from(viewGroup.context)
-                .inflate(layout.item_novelties, viewGroup, false)
+                .inflate(layout.item_novelty, viewGroup, false)
         )
     }
 

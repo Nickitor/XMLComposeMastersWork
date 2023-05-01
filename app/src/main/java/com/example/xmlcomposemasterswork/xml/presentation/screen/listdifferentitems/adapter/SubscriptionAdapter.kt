@@ -17,7 +17,7 @@ class SubscriptionAdapter : RecyclerView.Adapter<SubscriptionViewHolder>() {
     override fun onCreateViewHolder(viewGroup: ViewGroup, viewType: Int): SubscriptionViewHolder {
         return SubscriptionViewHolder(
             LayoutInflater.from(viewGroup.context)
-                .inflate(layout.item_subscriptions, viewGroup, false)
+                .inflate(layout.item_subscription, viewGroup, false)
         )
     }
 
