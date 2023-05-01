@@ -15,6 +15,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.xmlcomposemasterswork.R
@@ -24,31 +25,37 @@ import com.example.xmlcomposemasterswork.compose.presentation.view.TimerView
 import com.example.xmlcomposemasterswork.xml.presentation.screen.withupdates.WithUpdatesViewModel
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
+@Preview
 @Composable
 fun WithUpdatesScreen(
-    withUpdatesViewModel: WithUpdatesViewModel,
+    withUpdatesViewModel: WithUpdatesViewModel? = null,
     title: String = "",
     backClicked: (() -> Unit)? = null
 ) {
-    val state = withUpdatesViewModel.state.observeAsState()
-    withUpdatesViewModel.startTimer()
+    val state = withUpdatesViewModel?.state?.observeAsState()
+    withUpdatesViewModel?.startTimer()
 
-    Scaffold(modifier = Modifier.fillMaxSize(), topBar = {
-        ActionBar(title = title, clickListener = {
-            backClicked?.invoke()
-        })
-    }) {
+    Scaffold(
+        modifier = Modifier.fillMaxSize(),
+        topBar = {
+            ActionBar(
+                title = title,
+                clickListener = {
+                    backClicked?.invoke()
+                })
+        }) {
         Column(
-            modifier = Modifier.padding(
-                horizontal = 12.dp,
-            )
+            modifier = Modifier
+                .padding(
+                    horizontal = 12.dp,
+                )
         ) {
 
             TimerView(
                 modifier = Modifier.padding(
                     top = 8.dp,
                 ),
-                timer = state.value?.timer ?: 0
+                timer = state?.value?.timer ?: 0
             )
 
             LazyColumn(
@@ -58,9 +65,11 @@ fun WithUpdatesScreen(
                     )
             ) {
                 item {
-                    Row() {
+                    Row {
                         Text(
-                            text = stringResource(id = R.string.specific_order_number),
+                            text = stringResource(
+                                id = R.string.specific_order_number
+                            ),
                             fontSize = 16.sp,
                             fontWeight = FontWeight.Bold,
                             color = Color.Black
@@ -75,12 +84,15 @@ fun WithUpdatesScreen(
                         )
                     }
                     Text(
-                        text = stringResource(id = R.string.specific_order_receiver),
+                        text = stringResource(
+                            id = R.string.specific_order_receiver
+                        ),
                         fontSize = 16.sp,
                         color = Color.Black,
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier.padding(
-                            top = 24.dp, bottom = 4.dp
+                            top = 24.dp,
+                            bottom = 4.dp
                         )
                     )
                     Text(
@@ -99,7 +111,9 @@ fun WithUpdatesScreen(
                         color = Color.Black,
                     )
                     Text(
-                        text = stringResource(id = R.string.gift_card_sender),
+                        text = stringResource(
+                            id = R.string.gift_card_sender
+                        ),
                         fontSize = 16.sp,
                         color = Color.Black,
                         fontWeight = FontWeight.Bold,
@@ -113,12 +127,15 @@ fun WithUpdatesScreen(
                         color = Color.Black,
                     )
                     Text(
-                        text = stringResource(id = R.string.gift_card_message_text),
+                        text = stringResource(
+                            id = R.string.gift_card_message_text
+                        ),
                         fontSize = 16.sp,
                         color = Color.Black,
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier.padding(
-                            top = 24.dp, bottom = 4.dp
+                            top = 24.dp,
+                            bottom = 4.dp
                         )
                     )
                     Text(
@@ -127,12 +144,15 @@ fun WithUpdatesScreen(
                         color = Color.Black,
                     )
                     Text(
-                        text = stringResource(id = R.string.method_obtain_header),
+                        text = stringResource(
+                            id = R.string.method_obtain_header
+                        ),
                         fontSize = 16.sp,
                         color = Color.Black,
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier.padding(
-                            top = 24.dp, bottom = 4.dp
+                            top = 24.dp,
+                            bottom = 4.dp
                         )
                     )
                     Text(
@@ -141,12 +161,15 @@ fun WithUpdatesScreen(
                         color = Color.Black,
                     )
                     Text(
-                        text = stringResource(id = R.string.specific_order_date_and_time),
+                        text = stringResource(
+                            id = R.string.specific_order_date_and_time
+                        ),
                         fontSize = 16.sp,
                         color = Color.Black,
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier.padding(
-                            top = 24.dp, bottom = 4.dp
+                            top = 24.dp,
+                            bottom = 4.dp
                         )
                     )
                     Text(
@@ -155,12 +178,15 @@ fun WithUpdatesScreen(
                         color = Color.Black,
                     )
                     Text(
-                        text = stringResource(id = R.string.title_order_status),
+                        text = stringResource(
+                            id = R.string.title_order_status
+                        ),
                         fontSize = 16.sp,
                         color = Color.Black,
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier.padding(
-                            top = 24.dp, bottom = 4.dp
+                            top = 24.dp,
+                            bottom = 4.dp
                         )
                     )
                     Text(
@@ -169,12 +195,15 @@ fun WithUpdatesScreen(
                         color = Color.Black,
                     )
                     Text(
-                        text = stringResource(id = R.string.specific_order_payment_type),
+                        text = stringResource(
+                            id = R.string.specific_order_payment_type
+                        ),
                         fontSize = 16.sp,
                         color = Color.Black,
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier.padding(
-                            top = 24.dp, bottom = 4.dp
+                            top = 24.dp,
+                            bottom = 4.dp
                         )
                     )
                     Text(
@@ -183,7 +212,9 @@ fun WithUpdatesScreen(
                         color = Color.Black,
                     )
                     Text(
-                        text = stringResource(id = R.string.specific_order_list),
+                        text = stringResource(
+                            id = R.string.specific_order_list
+                        ),
                         fontSize = 20.sp,
                         color = Color.Black,
                         fontWeight = FontWeight.Bold,
@@ -193,9 +224,11 @@ fun WithUpdatesScreen(
                     )
                 }
 
-                val list = state.value?.order ?: listOf()
+                val list = state?.value?.order ?: listOf()
                 items(list) {
-                    OrderProductView(product = it)
+                    OrderProductView(
+                        product = it
+                    )
                 }
 
                 item {
@@ -210,12 +243,16 @@ fun WithUpdatesScreen(
                             )
                     ) {
                         Text(
-                            text = stringResource(id = R.string.specific_order_payment_amount),
+                            text = stringResource(
+                                id = R.string.specific_order_payment_amount
+                            ),
                             fontSize = 24.sp,
                             color = Color.Black,
                             fontWeight = FontWeight.Bold,
                             modifier = Modifier
-                                .weight(1f)
+                                .weight(
+                                    weight = 1f
+                                )
                         )
                         Text(
                             text = "1000,00 ₽",

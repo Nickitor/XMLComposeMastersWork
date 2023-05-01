@@ -13,14 +13,18 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.xmlcomposemasterswork.R
 import com.example.xmlcomposemasterswork.domain.model.OrderProduct
 
+@Preview
 @Composable
 fun OrderProductView(
-    product: OrderProduct
+    product: OrderProduct = OrderProduct(
+        id = "0"
+    )
 ) {
     Row(
         modifier = Modifier
@@ -30,10 +34,14 @@ fun OrderProductView(
             .fillMaxWidth()
     ) {
         Image(
-            painter = painterResource(id = R.drawable.product),
+            painter = painterResource(
+                id = R.drawable.product
+            ),
             contentDescription = "Image",
             modifier = Modifier
-                .size(96.dp)
+                .size(
+                    size = 96.dp
+                )
         )
         Column(
             modifier = Modifier
@@ -56,7 +64,7 @@ fun OrderProductView(
                         top = 12.dp
                     )
             )
-            Row() {
+            Row {
                 Text(
                     text = product.price,
                     fontWeight = FontWeight.Bold,
@@ -79,7 +87,9 @@ fun OrderProductView(
                         )
                 )
                 Text(
-                    text = stringResource(id = R.string.rouble),
+                    text = stringResource(
+                        id = R.string.rouble
+                    ),
                     fontWeight = FontWeight.Bold,
                     fontSize = 26.sp,
                     color = Color.Black,

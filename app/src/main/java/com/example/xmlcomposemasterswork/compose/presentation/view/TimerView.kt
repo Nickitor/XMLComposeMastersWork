@@ -16,54 +16,68 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.xmlcomposemasterswork.R
 import com.example.xmlcomposemasterswork.R.drawable
 
 @SuppressLint("CoroutineCreationDuringComposition")
+@Preview
 @Composable
 fun TimerView(
     modifier: Modifier = Modifier,
     timer: Int = 0,
 ) {
     Card(
-        shape = RoundedCornerShape(12.dp),
+        shape = RoundedCornerShape(
+            size = 12.dp
+        ),
         elevation = 0.dp,
-        backgroundColor = colorResource(id = R.color.grey_alpha),
+        backgroundColor = colorResource(
+            id = R.color.grey_alpha
+        ),
         modifier = modifier
     ) {
         Row(
             modifier = modifier
                 .fillMaxWidth()
+                .padding(
+                    all = 12.dp
+                )
         ) {
             Icon(
                 modifier = Modifier
-                    .padding(12.dp)
-                    .size(16.dp),
-                painter = painterResource(id = drawable.ic_time),
+                    .size(
+                        size = 16.dp
+                    ),
+                painter = painterResource(
+                    id = drawable.ic_time
+                ),
                 contentDescription = "Timer"
             )
 
-            Column() {
+            Column {
                 Text(
                     text = "$timer с",
                     fontSize = 14.sp,
                     color = Color.Black,
+                    fontWeight = FontWeight.Bold,
                     modifier = Modifier
                         .padding(
-                            top = 12.dp,
-                            end = 12.dp
+                            start = 12.dp,
                         )
                 )
                 Text(
-                    text = stringResource(id = R.string.partial_order_timer),
+                    text = stringResource(
+                        id = R.string.partial_order_timer
+                    ),
                     fontSize = 14.sp,
                     color = Color.Black,
                     modifier = Modifier
                         .padding(
-                            end = 12.dp,
-                            bottom = 12.dp
+                            start = 12.dp
                         )
                 )
             }
