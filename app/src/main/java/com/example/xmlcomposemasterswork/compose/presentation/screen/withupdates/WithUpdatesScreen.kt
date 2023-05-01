@@ -22,7 +22,6 @@ import com.example.xmlcomposemasterswork.R
 import com.example.xmlcomposemasterswork.compose.presentation.view.ActionBar
 import com.example.xmlcomposemasterswork.compose.presentation.view.OrderProductView
 import com.example.xmlcomposemasterswork.compose.presentation.view.TimerView
-import com.example.xmlcomposemasterswork.xml.presentation.screen.withupdates.WithUpdatesViewModel
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Preview

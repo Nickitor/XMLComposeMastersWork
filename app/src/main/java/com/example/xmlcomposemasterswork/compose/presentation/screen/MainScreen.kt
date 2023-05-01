@@ -20,7 +20,7 @@ import com.example.xmlcomposemasterswork.compose.presentation.screen.home.HomeSc
 import com.example.xmlcomposemasterswork.compose.presentation.screen.listofdifferentitems.ListOfDifferentItemsScreen
 import com.example.xmlcomposemasterswork.compose.presentation.screen.listoflists.ListOfListsScreen
 import com.example.xmlcomposemasterswork.compose.presentation.screen.withupdates.WithUpdatesScreen
-import com.example.xmlcomposemasterswork.xml.presentation.screen.withupdates.WithUpdatesViewModel
+import com.example.xmlcomposemasterswork.compose.presentation.screen.withupdates.WithUpdatesViewModel
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
 @Preview
@@ -85,6 +85,7 @@ fun MainScreen(
                         title = it.orEmpty(),
                         backClicked = {
                             navHostController.popBackStack()
+                            withUpdatesViewModel.stopTimer()
                         }
                     )
                 }

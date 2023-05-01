@@ -4,6 +4,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.xmlcomposemasterswork.domain.model.WithUpdatesModel
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
@@ -17,13 +18,15 @@ class WithUpdatesViewModel : ViewModel() {
 
     fun startTimer() {
         timerJob?.cancel()
-        timerJob = viewModelScope.launch {
+        timerJob = viewModelScope.launch(Dispatchers.Default) {
             while (true) {
                 delay(TIMER_PERIOD)
                 val currentState = state.value ?: WithUpdatesModel()
-                _state.value = currentState.copy(
-                    timer = currentState.timer + 1,
-                    timerText = "${(currentState.timer + 1)} с"
+                _state.postValue(
+                    currentState.copy(
+                        timer = currentState.timer + 1,
+                        timerText = "${(currentState.timer + 1)} с"
+                    )
                 )
             }
         }

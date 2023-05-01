@@ -4,7 +4,7 @@ data class WithUpdatesModel(
     val timer: Int = 0,
     val timerText: String = "0 c",
     val orderId: String = "123",
-    val receiverName: String = "от кого",
+    val receiverName: String = "Иван Иванов",
     val receiverPhone: String = "+7(999)-999-99-99",
     val receiverEmail: String = "ivanivanov@mail.ru",
     val senderName: String = "от кого",
