@@ -22,12 +22,12 @@ fun NoveltyView(
 ) {
     Card(
         modifier = Modifier
-            .size(
-                width = 170.dp,
-                height = 220.dp
-            )
             .padding(
                 10.dp
+            )
+            .size(
+                width = 150.dp,
+                height = 200.dp
             ),
         elevation = 5.dp,
         shape = RoundedCornerShape(10.dp),

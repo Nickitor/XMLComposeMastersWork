@@ -24,11 +24,11 @@ fun SubscriptionView(
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .size(
-                size = 220.dp
-            )
             .padding(
                 10.dp
+            )
+            .size(
+                size = 200.dp
             ),
         elevation = 5.dp,
         shape = RoundedCornerShape(10.dp),

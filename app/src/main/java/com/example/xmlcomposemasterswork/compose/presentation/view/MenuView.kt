@@ -22,12 +22,12 @@ fun MenuView(
 ) {
     Card(
         modifier = Modifier
-            .size(
-                width = 100.dp,
-                height = 120.dp
-            )
             .padding(
                 10.dp
+            )
+            .size(
+                width = 80.dp,
+                height = 100.dp
             ),
         elevation = 5.dp,
         shape = RoundedCornerShape(10.dp),

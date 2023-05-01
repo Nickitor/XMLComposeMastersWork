@@ -22,11 +22,11 @@ fun StoryView(
 ) {
     Card(
         modifier = Modifier
-            .size(
-                70.dp
-            )
             .padding(
                 10.dp
+            )
+            .size(
+                50.dp
             ),
         elevation = 5.dp,
         shape = RoundedCornerShape(50.dp),

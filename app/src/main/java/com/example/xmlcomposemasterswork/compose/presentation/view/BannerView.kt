@@ -22,12 +22,12 @@ fun BannerView(
 ) {
     Card(
         modifier = Modifier
-            .size(
-                width = 320.dp,
-                height = 220.dp
-            )
             .padding(
                 10.dp
+            )
+            .size(
+                width = 300.dp,
+                height = 200.dp
             ),
         elevation = 5.dp,
         shape = RoundedCornerShape(10.dp),
