@@ -34,13 +34,17 @@ fun ProductView(
 ) {
     Row(
         modifier = modifier
-            .height(intrinsicSize = IntrinsicSize.Max)
+            .height(
+                intrinsicSize = IntrinsicSize.Max
+            )
             .fillMaxWidth()
             .background(Color.White)
     ) {
         Column(
             modifier = Modifier
-                .weight(1f)
+                .weight(
+                    weight = 1f
+                )
                 .padding(
                     end = 12.dp
                 )
@@ -50,14 +54,19 @@ fun ProductView(
             ) {
                 Image(
                     contentScale = ContentScale.Crop,
-                    painter = painterResource(id = R.drawable.product),
+                    painter = painterResource(
+                        id = R.drawable.product
+                    ),
                     contentDescription = "Product",
-                    modifier = Modifier.size(40.dp)
+                    modifier = Modifier.size(
+                        size = 40.dp
+                    )
                 )
-                Column() {
+                Column {
                     Text(
                         text = "Артикул 123456789",
                         fontSize = 16.sp,
+                        color = Color.Black,
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier
                             .padding(
@@ -69,16 +78,21 @@ fun ProductView(
                         text = "Яблоко Голден Делишес",
                         fontSize = 16.sp,
                         fontWeight = FontWeight.Bold,
+                        color = Color.Black,
                         modifier = Modifier
-                            .padding(start = 8.dp)
+                            .padding(
+                                start = 8.dp
+                            )
                             .fillMaxWidth()
                     )
-
                     Text(
                         text = "105 ₽ за кг",
                         fontSize = 16.sp,
+                        color = Color.Black,
                         modifier = Modifier
-                            .padding(start = 8.dp)
+                            .padding(
+                                start = 8.dp
+                            )
                             .fillMaxWidth()
                     )
                 }
@@ -88,11 +102,15 @@ fun ProductView(
             ) {
                 Text(
                     text = "Товар не доступен",
-                    color = colorResource(id = R.color.error),
+                    color = colorResource(
+                        id = R.color.error
+                    ),
                     fontSize = 14.sp,
                     modifier = Modifier
                         .padding(
-                            start = 48.dp, top = 8.dp, bottom = 6.dp
+                            start = 48.dp,
+                            top = 8.dp,
+                            bottom = 6.dp
                         )
                         .fillMaxWidth()
                 )
@@ -104,20 +122,33 @@ fun ProductView(
                     textAlign = TextAlign.Center,
                     modifier = Modifier
                         .padding(
-                            top = 8.dp, bottom = 10.dp
+                            top = 8.dp,
+                            bottom = 10.dp
                         )
-                        .background(colorResource(id = R.color.error))
+                        .background(
+                            colorResource(
+                                id = R.color.error
+                            )
+                        )
                         .fillMaxWidth()
                 )
             }
         }
         Button(
-            colors = ButtonDefaults.buttonColors(backgroundColor = colorResource(id = R.color.grey)),
+            colors = ButtonDefaults.buttonColors(
+                backgroundColor = colorResource(
+                    id = R.color.grey
+                )
+            ),
             onClick = { },
             modifier = Modifier
                 .fillMaxHeight()
-                .size(40.dp)
-                .padding(vertical = 5.dp)
+                .padding(
+                    all = 4.dp
+                )
+                .size(
+                    size = 40.dp
+                )
         ) {
             Text(
                 text = "ДОБАВИТЬ"

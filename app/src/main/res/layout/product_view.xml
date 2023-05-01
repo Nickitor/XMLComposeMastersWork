@@ -55,7 +55,8 @@
             android:layout_height="wrap_content"
             android:gravity="start"
             android:text="105 ₽ за кг"
-            android:textColor="@color/black" />
+            android:textColor="@color/black"
+            android:textSize="16sp" />
 
     </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -71,7 +72,6 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:elevation="1dp"
         android:gravity="start"
         android:paddingBottom="6dp"
         android:text="Товар не доступен"
@@ -85,27 +85,24 @@
         android:id="@+id/cvProductCounter"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginEnd="12dp"
         app:layout_constraintBottom_toTopOf="@id/tvInfoLabel"
-        app:layout_constraintEnd_toStartOf="@id/btnAction"
+        app:layout_constraintEnd_toEndOf="@+id/tvNotAvailable"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvNotAvailable" />
 
     <com.google.android.material.textview.MaterialTextView
         android:id="@+id/tvInfoLabel"
         android:layout_width="0dp"
-        android:layout_height="18dp"
+        android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:layout_marginEnd="12dp"
         android:layout_marginBottom="10dp"
         android:background="@color/error"
-        android:elevation="1dp"
         android:gravity="center"
         android:text="Товара меньше, чем заказывали"
         android:textColor="@color/white"
         android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/btnAction"
+        app:layout_constraintEnd_toEndOf="@+id/tvNotAvailable"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cvProductCounter" />
 
