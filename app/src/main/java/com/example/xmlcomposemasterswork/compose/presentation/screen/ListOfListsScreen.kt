@@ -25,7 +25,6 @@ fun ListOfListsScreen(
     backClicked: (() -> Unit)? = null
 ) {
     Scaffold(
-        backgroundColor = colorResource(id = color.background),
         modifier = Modifier.fillMaxSize(),
         topBar = {
             ActionBar(

@@ -28,7 +28,6 @@ fun MainScreen(
 
     Scaffold(
         modifier = Modifier.fillMaxSize(),
-        backgroundColor = colorResource(id = R.color.background),
         floatingActionButton = {
             FloatingActionButton(
                 backgroundColor = Color.White,
