@@ -31,7 +31,9 @@ fun SubscriptionView(
                 size = 200.dp
             ),
         elevation = 5.dp,
-        shape = RoundedCornerShape(10.dp),
+        shape = RoundedCornerShape(
+            size = 10.dp
+        ),
     ) {
         Text(
             text = text,

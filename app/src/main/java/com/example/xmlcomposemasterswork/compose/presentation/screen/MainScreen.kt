@@ -9,20 +9,25 @@ import androidx.compose.material.Scaffold
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.navigation.compose.rememberNavController
 import com.example.xmlcomposemasterswork.R
 import com.example.xmlcomposemasterswork.compose.navigation.AppNavGraph
+import com.example.xmlcomposemasterswork.compose.presentation.screen.customview.CustomViewScreen
+import com.example.xmlcomposemasterswork.compose.presentation.screen.home.HomeScreen
+import com.example.xmlcomposemasterswork.compose.presentation.screen.listofdifferentitems.ListOfDifferentItemsScreen
+import com.example.xmlcomposemasterswork.compose.presentation.screen.listoflists.ListOfListsScreen
 import com.example.xmlcomposemasterswork.compose.presentation.screen.withupdates.WithUpdatesScreen
 import com.example.xmlcomposemasterswork.xml.presentation.screen.withupdates.WithUpdatesViewModel
 
 @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
+@Preview
 @Composable
 fun MainScreen(
-    withUpdatesViewModel: WithUpdatesViewModel,
-    switchToXMLClickListener: (() -> Unit)?
+    withUpdatesViewModel: WithUpdatesViewModel? = null,
+    switchToXMLClickListener: (() -> Unit)? = null
 ) {
     val navHostController = rememberNavController()
 
@@ -74,13 +79,15 @@ fun MainScreen(
                 )
             },
             withUpdatesContent = {
-                WithUpdatesScreen(
-                    withUpdatesViewModel = withUpdatesViewModel,
-                    title = it.orEmpty(),
-                    backClicked = {
-                        navHostController.popBackStack()
-                    }
-                )
+                if (withUpdatesViewModel != null) {
+                    WithUpdatesScreen(
+                        withUpdatesViewModel = withUpdatesViewModel,
+                        title = it.orEmpty(),
+                        backClicked = {
+                            navHostController.popBackStack()
+                        }
+                    )
+                }
             },
         )
     }

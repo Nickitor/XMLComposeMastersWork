@@ -1,4 +1,4 @@
-package com.example.xmlcomposemasterswork.compose.presentation.screen
+package com.example.xmlcomposemasterswork.compose.presentation.screen.customview
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Column

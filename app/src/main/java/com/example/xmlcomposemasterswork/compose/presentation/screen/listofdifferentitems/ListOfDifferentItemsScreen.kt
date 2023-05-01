@@ -1,4 +1,4 @@
-package com.example.xmlcomposemasterswork.compose.presentation.screen
+package com.example.xmlcomposemasterswork.compose.presentation.screen.listofdifferentitems
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Box
@@ -53,7 +53,9 @@ fun ListOfDifferentItemsScreen(
         ) {
             item {
                 Text(
-                    text = stringResource(id = R.string.stories),
+                    text = stringResource(
+                        id = R.string.stories
+                    ),
                     fontWeight = FontWeight.Bold,
                     fontSize = 22.sp,
                     color = Color.Black
@@ -62,13 +64,17 @@ fun ListOfDifferentItemsScreen(
             item {
                 LazyRow {
                     items(StorySource.getList()) { item ->
-                        StoryView(item.number)
+                        StoryView(
+                            text = item.number
+                        )
                     }
                 }
             }
             item {
                 Text(
-                    text = stringResource(id = R.string.banners),
+                    text = stringResource(
+                        id = R.string.banners
+                    ),
                     fontWeight = FontWeight.Bold,
                     fontSize = 22.sp,
                     color = Color.Black
@@ -77,13 +83,17 @@ fun ListOfDifferentItemsScreen(
             item {
                 LazyRow {
                     items(BannersSource.getList()) { item ->
-                        BannerView(item.number)
+                        BannerView(
+                            text = item.number
+                        )
                     }
                 }
             }
             item {
                 Text(
-                    text = stringResource(id = R.string.menu),
+                    text = stringResource(
+                        id = R.string.menu
+                    ),
                     fontWeight = FontWeight.Bold,
                     fontSize = 22.sp,
                     color = Color.Black
@@ -92,13 +102,17 @@ fun ListOfDifferentItemsScreen(
             item {
                 LazyRow {
                     items(BannersSource.getList()) { item ->
-                        MenuView(item.number)
+                        MenuView(
+                            item.number
+                        )
                     }
                 }
             }
             item {
                 Text(
-                    text = stringResource(id = R.string.subscriptions),
+                    text = stringResource(
+                        id = R.string.subscriptions
+                    ),
                     fontWeight = FontWeight.Bold,
                     fontSize = 22.sp,
                     color = Color.Black
@@ -111,14 +125,18 @@ fun ListOfDifferentItemsScreen(
                             modifier = Modifier
                                 .fillParentMaxWidth()
                         ) {
-                            SubscriptionView(item.number)
+                            SubscriptionView(
+                                text = item.number
+                            )
                         }
                     }
                 }
             }
             item {
                 Text(
-                    text = stringResource(id = R.string.novelties),
+                    text = stringResource(
+                        id = R.string.novelties
+                    ),
                     fontWeight = FontWeight.Bold,
                     fontSize = 22.sp,
                     color = Color.Black
@@ -127,7 +145,9 @@ fun ListOfDifferentItemsScreen(
             item {
                 LazyRow {
                     items(BannersSource.getList()) { item ->
-                        NoveltyView(item.number)
+                        NoveltyView(
+                            text = item.number
+                        )
                     }
                 }
             }

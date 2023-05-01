@@ -1,4 +1,4 @@
-package com.example.xmlcomposemasterswork.compose.presentation.screen
+package com.example.xmlcomposemasterswork.compose.presentation.screen.home
 
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding

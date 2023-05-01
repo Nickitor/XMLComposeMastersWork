@@ -29,7 +29,9 @@ fun StoryView(
                 50.dp
             ),
         elevation = 5.dp,
-        shape = RoundedCornerShape(50.dp),
+        shape = RoundedCornerShape(
+            size = 50.dp
+        ),
     ) {
         Text(
             text = text,
