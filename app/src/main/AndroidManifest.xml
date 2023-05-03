@@ -14,11 +14,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.XMLComposeMastersWork"
         tools:targetApi="31">
+        <profileable
+            android:shell="true"
+            tools:targetApi="29" />
+
         <activity
             android:name=".compose.presentation.ComposeActivity"
-            android:exported="true">
-
-        </activity>
+            android:exported="true"></activity>
         <activity
             android:name=".xml.presentation.XMLActivity"
             android:exported="true">
