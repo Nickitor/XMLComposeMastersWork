@@ -48,11 +48,12 @@ class ActivityFrameRateTracer : Application.ActivityLifecycleCallbacks {
         frozenFrames = 0
         data.forEach { frameTime, frameCount ->
             totalFrames += frameCount
-            if (frameTime >= SLOW_FRAME_DURATION_LIMIT) {
-                slowFrames += frameCount
-            }
             if (frameTime >= FROZEN_FRAME_DURATION_LIMIT) {
                 frozenFrames += frameCount
+            } else {
+                if (frameTime >= SLOW_FRAME_DURATION_LIMIT) {
+                    slowFrames += frameCount
+                }
             }
         }
         Log.d("totalFrames", totalFrames.toString())
