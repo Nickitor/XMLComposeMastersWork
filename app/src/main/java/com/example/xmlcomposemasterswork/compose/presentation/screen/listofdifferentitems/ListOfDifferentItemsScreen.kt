@@ -12,12 +12,14 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.xmlcomposemasterswork.R
+import com.example.xmlcomposemasterswork.R.color
 import com.example.xmlcomposemasterswork.compose.presentation.view.ActionBar
 import com.example.xmlcomposemasterswork.compose.presentation.view.BannerView
 import com.example.xmlcomposemasterswork.compose.presentation.view.MenuView
@@ -36,6 +38,7 @@ fun ListOfDifferentItemsScreen(
 ) {
     Scaffold(
         modifier = Modifier.fillMaxSize(),
+        backgroundColor = colorResource(id = color.background),
         topBar = {
             ActionBar(
                 title = title,

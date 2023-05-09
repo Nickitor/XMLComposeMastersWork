@@ -12,7 +12,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.xmlcomposemasterswork.R.color
+import com.example.xmlcomposemasterswork.R
 import com.example.xmlcomposemasterswork.compose.presentation.view.ActionBar
 import com.example.xmlcomposemasterswork.compose.presentation.view.ItemList
 import com.example.xmlcomposemasterswork.data.source.ListOfListsSource
@@ -25,7 +25,9 @@ fun ListOfListsScreen(
     backClicked: (() -> Unit)? = null
 ) {
     Scaffold(
-        modifier = Modifier.fillMaxSize(),
+        modifier = Modifier
+            .fillMaxSize(),
+        backgroundColor = colorResource(id = R.color.background),
         topBar = {
             ActionBar(
                 title = title,
