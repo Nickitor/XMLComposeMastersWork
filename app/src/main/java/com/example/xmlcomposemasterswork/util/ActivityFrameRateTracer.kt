@@ -4,6 +4,7 @@ import android.app.Activity
 import android.app.Application
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.core.app.FrameMetricsAggregator
 import androidx.core.util.forEach
 
@@ -21,6 +22,11 @@ class ActivityFrameRateTracer : Application.ActivityLifecycleCallbacks {
 
     override fun onActivityPaused(activity: Activity) {
         logResult()
+        Toast.makeText(
+            activity,
+            "totalFrames $totalFrames \n slowFrames $slowFrames \n frozenFrames $frozenFrames",
+            Toast.LENGTH_LONG
+        ).show()
         frameAggregator.remove(activity)
         frameAggregator.reset()
     }
