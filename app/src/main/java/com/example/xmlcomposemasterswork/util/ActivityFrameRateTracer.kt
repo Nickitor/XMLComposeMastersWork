@@ -1,63 +1,61 @@
 package com.example.xmlcomposemasterswork.util
 
-import androidx.activity.ComponentActivity
+import android.app.Activity
+import android.app.Application
+import android.os.Bundle
+import android.util.Log
 import androidx.core.app.FrameMetricsAggregator
-import androidx.lifecycle.DefaultLifecycleObserver
-import androidx.lifecycle.LifecycleOwner
-import androidx.lifecycle.lifecycleScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
+import androidx.core.util.forEach
 
-class ActivityFrameRateTracer constructor(
-    private val activity: ComponentActivity,
-    private val label: String = "Screen"
-) : DefaultLifecycleObserver {
+class ActivityFrameRateTracer : Application.ActivityLifecycleCallbacks {
 
-    private val aggregator: FrameMetricsAggregator = FrameMetricsAggregator()
+    private val frameAggregator: FrameMetricsAggregator = FrameMetricsAggregator()
 
     private var totalFrames = 0L
     private var slowFrames = 0L
     private var frozenFrames = 0L
 
-    override fun onStart(owner: LifecycleOwner) {
-        super.onStart(owner)
-        activity.lifecycleScope.launch(Dispatchers.Default) {
-            aggregator.add(activity)
-        }
+    override fun onActivityResumed(activity: Activity) {
+        frameAggregator.add(activity)
     }
 
-    override fun onStop(owner: LifecycleOwner) {
-        activity.lifecycleScope.launch(Dispatchers.Default) {
-            val data = aggregator.metrics ?: return@launch
+    override fun onActivityPaused(activity: Activity) {
+        logResult()
+        frameAggregator.remove(activity)
+        frameAggregator.reset()
+    }
 
-            totalFrames = 0L
-            slowFrames = 0L
-            frozenFrames = 0L
+    override fun onActivityCreated(activity: Activity, savedInstanceState: Bundle?) = Unit
 
-            data[FrameMetricsAggregator.TOTAL_INDEX].let { distributions ->
-                for (i in 0 until distributions.size()) {
-                    val duration = distributions.keyAt(i)
-                    val frameCount = distributions.valueAt(i)
-                    totalFrames += frameCount
-                    if (duration > SLOW_FRAME_DURATION_LIMIT)
-                        slowFrames += frameCount
-                    if (duration > FROZEN_FRAME_DURATION_LIMIT)
-                        frozenFrames += frameCount
-                }
+    override fun onActivityStarted(activity: Activity) = Unit
+
+    override fun onActivityStopped(activity: Activity) = Unit
+
+    override fun onActivitySaveInstanceState(activity: Activity, outState: Bundle) = Unit
+
+    override fun onActivityDestroyed(activity: Activity) = Unit
+
+    private fun logResult() {
+        val data = frameAggregator.metrics?.getOrNull(FrameMetricsAggregator.TOTAL_INDEX) ?: return
+        totalFrames = 0
+        slowFrames = 0
+        frozenFrames = 0
+        data.forEach { frameTime, frameCount ->
+            totalFrames += frameCount
+            if (frameTime >= SLOW_FRAME_DURATION_LIMIT) {
+                slowFrames += frameCount
             }
-            aggregator.reset()
-            val frameRateData = FrameRate(totalFrames, slowFrames, frozenFrames)
-
-            println(label)
-            println("totalFrames ${frameRateData.totalFrames}")
-            println("slowFrames ${frameRateData.slowFrames}")
-            println("frozenFrames ${frameRateData.frozenFrames}")
+            if (frameTime >= FROZEN_FRAME_DURATION_LIMIT) {
+                frozenFrames += frameCount
+            }
         }
-        super.onStop(owner)
+        Log.d("totalFrames", totalFrames.toString())
+        Log.d("slowFrames", slowFrames.toString())
+        Log.d("frozenFrames", frozenFrames.toString())
     }
 
     companion object {
-        private const val SLOW_FRAME_DURATION_LIMIT = 16
+        private const val SLOW_FRAME_DURATION_LIMIT = 17
         private const val FROZEN_FRAME_DURATION_LIMIT = 700
     }
 }

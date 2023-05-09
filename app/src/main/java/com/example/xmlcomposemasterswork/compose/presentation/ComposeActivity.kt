@@ -21,15 +21,11 @@ class ComposeActivity : ComponentActivity() {
 
     private val viewModel by viewModels<ComposeViewModel>()
 
-    private val frameRateTracer = ActivityFrameRateTracer(this, "Compose")
-
     private val withUpdatesViewModel by viewModels<WithUpdatesViewModel>()
 
     @SuppressLint("UnusedMaterialScaffoldPaddingParameter")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-
-        lifecycle.addObserver(frameRateTracer)
 
         setContent {
             XMLComposeMastersWorkTheme {

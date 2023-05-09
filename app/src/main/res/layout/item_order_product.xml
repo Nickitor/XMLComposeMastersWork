@@ -7,11 +7,12 @@
     android:layout_height="wrap_content"
     android:paddingVertical="16dp">
 
-    <com.google.android.material.imageview.ShapeableImageView
+    <ImageView
         android:id="@+id/ivImage"
         android:layout_width="96dp"
         android:layout_height="96dp"
         android:adjustViewBounds="true"
+        android:contentDescription="TODO"
         android:scaleType="centerCrop"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
